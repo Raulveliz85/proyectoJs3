@@ -1,9 +1,8 @@
 let cartContainer = document.getElementById("cart-section")
-
-let cartStorage = localStorage.getItem("cartProducts")
-cartStorage = JSON.parse(cartStorage)
-
+ cartStorage = JSON.parse(localStorage.getItem("cartPrincipal")) || []
 function renderCarrito(cartItems) {
+  cartContainer.innerHTML = ""
+
   cartItems.forEach(producto => {
     const card = document.createElement("div")
     card.innerHTML = `
